@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Follow No.1</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <style>
+        .contain {
+          padding: 0;
+          margin: 0;
+        }
+        .header {
+          position: absolute;
+          height: 140px;
+          top: 0;
+          right: 0;
+          left: 0;
+        }
+        .main {
+          position: absolute;
+          top: 140px;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          overflow: auto;
+        }
+
+        input[type=checkbox] {
+        zoom: 150%;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <!-- header  -->
+    <div class="header">
+        <div class="container">
+            <br>
+            <h2>
+                <strong>跟著南伯玩</strong>
+                <small class="text-muted"> 旅遊推薦系統</small>
+            </h2>
+            <br>
+            
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#"><strong>step 1</strong></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">step 2</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">step 3</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">step 4</a>
+                </li>
+              </ul>
+
+        </div>
+    </div>
+
+
+
+    <!-- main -->
+
+    <div class="main">
+ 
+        <div class='container'>
+            <br>
+
+            <div class="card">
+                <div class="card-body">
+                <strong>說明</strong>： 請根據直覺，選擇3個你最喜歡的旅遊場景！
+                </div>
+            </div>
+            
+            <br>
+            <br>
+
+            <form method="post" action="{{ url_for('show') }}">
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value='Type1list' >  No. 1<br>
+                    <img src="../static/分類/Type1list/{{Type1list[0]}}/{{Type1list[0]}}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value='Type2list'>  No. 2<br>
+                    <img src="../static/分類/Type2list/{{Type2list[0]}}/{{Type2list[0]}}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value='Type3list'>  No. 3<br>
+                    <img src="../static/分類/Type3list/{{Type3list[0]}}/{{Type3list[0]}}1.jpg" width="300" height="200" alt="...">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value='Type4list'>  No. 4<br>
+                    <img src="../static/分類/Type4list/{{Type4list[0]}}/{{Type4list[0]}}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value='Type5list'>  No. 5<br>
+                    <img src="../static/分類/Type5list/{{Type5list[0]}}/{{Type5list[0]}}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value='Type6list' > No. 6<br>
+                    <img src="../static/分類/Type6list/{{Type6list[0]}}/{{Type6list[0]}}1.jpg" width="300" height="200" alt="...">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value='Type7list'>  No. 7<br>
+                    <img src="../static/分類/Type7list/{{Type7list[0]}}/{{Type7list[0]}}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value='Type8list'>  No. 8<br>
+                    <img src="../static/分類/Type8list/{{Type8list[0]}}/{{Type8list[0]}}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value='Type9list'>  No. 9<br>
+                    <img src="../static/分類/Type9list/{{Type9list[0]}}/{{Type9list[0]}}1.jpg" width="300" height="200" alt="...">
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-secondary btn-lg" type="submit">Next</button>
+            </div>
+
+            </form>
+
+        
+        </div>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+</body>
+
+
+</html>
