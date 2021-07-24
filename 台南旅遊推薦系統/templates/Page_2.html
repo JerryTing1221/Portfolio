@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <title>Follow No.1</title>
+
+    <style>
+        .contain {
+          padding: 0;
+          margin: 0;
+        }
+        .header {
+          position: absolute;
+          height: 140px;
+          top: 0;
+          right: 0;
+          left: 0;
+        }
+        .main {
+          position: absolute;
+          top: 140px;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          overflow: auto;
+        }
+
+        input[type=checkbox] {
+        zoom: 150%;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <!-- header  -->
+    <div class="header">
+        <div class="container">
+
+            <br>
+            <h2>
+                <strong>跟著南伯玩</strong>
+                <small class="text-muted"> 旅遊推薦系統</small>
+            </h2>
+            <br>
+            
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">step 1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#"><strong>step 2</strong></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">step 3</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">step 4</a>
+                </li>
+              </ul>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- main -->
+
+    <div class="main">
+
+        <div class="container">
+            <br>
+            
+            <div class="card">
+                <div class="card-body">
+                <strong>說明</strong>： 以下是根據您喜好的旅遊場景，推薦給您的景點，請選擇3個當作這次旅程主要景點！
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div>
+            <form method="post" action="{{ url_for('recommend') }}">
+            
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{photoClass1[0]}}" >  No. 1 <br>
+                    <p><h6><strong>{{photoClass1[0]}}</strong></h6></p>
+                    <img src="../static/分類/{{ values[0] }}/{{ photoClass1[0] }}/{{ photoClass1[0] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{photoClass1[1]}}" >  No. 2 <br>
+                    <p><h6><strong>{{photoClass1[1]}}</strong></h6></p>
+                    <img src="../static/分類/{{ values[0] }}/{{ photoClass1[1] }}/{{ photoClass1[1] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{photoClass1[2]}}" >  No. 3 <br>
+                    <p><h6><strong>{{photoClass1[2]}}</strong></h6></p>
+                    <img src="../static/分類/{{ values[0] }}/{{ photoClass1[2] }}/{{ photoClass1[2] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{photoClass1[3]}}" >  No. 4 <br>
+                    <p><h6><strong> {{photoClass1[3]}} </strong></h6></p>
+                    <img src="../static/分類/{{ values[0] }}/{{ photoClass1[3] }}/{{ photoClass1[3] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{photoClass1[4]}}" >  No. 5 <br>
+                    <p><h6><strong> {{photoClass1[4]}}</strong></h6></p>
+                    <img src="../static/分類/{{ values[0] }}/{{ photoClass1[4] }}/{{ photoClass1[4] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass2[0] }}" >  No. 6 <br>
+                    <p><h6><strong>{{ photoClass2[0] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[1] }}/{{ photoClass2[0] }}/{{ photoClass2[0] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class='row'>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass2[1] }}">  No. 7 <br>
+                    <p><h6><strong>{{ photoClass2[1] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[1] }}/{{ photoClass2[1] }}/{{ photoClass2[1] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass2[2] }}">  No. 8 <br>
+                    <p><h6><strong>{{ photoClass2[2] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[1] }}/{{ photoClass2[2] }}/{{ photoClass2[2] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass2[3] }}">  No. 9 <br>
+                    <p><h6><strong>{{ photoClass2[3] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[1] }}/{{ photoClass2[3] }}/{{ photoClass2[3] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class='row'>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass2[4] }}">  No. 10 <br>
+                    <p><h6><strong>{{ photoClass2[4] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[1] }}/{{ photoClass2[4] }}/{{ photoClass2[4] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass3[0] }}">  No. 11 <br>
+                    <p><h6><strong>{{ photoClass3[0] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[2] }}/{{ photoClass3[0] }}/{{ photoClass3[0] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass3[1] }}">  No. 12 <br>
+                    <p><h6><strong>{{ photoClass3[1] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[2] }}/{{ photoClass3[1] }}/{{ photoClass3[1] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass3[2] }}">  No. 13 <br>
+                    <p><h6><strong>{{ photoClass3[2] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[2] }}/{{ photoClass3[2] }}/{{ photoClass3[2] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass3[3] }}">  No. 14 <br>
+                    <p><h6><strong>{{ photoClass3[3] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[2] }}/{{ photoClass3[3] }}/{{ photoClass3[3] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="checkbox" value="{{ photoClass3[4] }}">  No. 15 <br>
+                    <p><h6><strong>{{ photoClass3[4] }}</strong></h6></p>
+                    <img src="../static/分類/{{ values[2] }}/{{ photoClass3[4] }}/{{ photoClass3[4] }}1.jpg" width="300" height="200" alt="...">
+                </div>
+                <div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-secondary btn-lg" type="submit">Next</button>
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+            </form>
+            </div>
+            <br>
+            <br>
+            <br>
+
+        </div>
+    
+    
+    </div>
+
+</body>
+</html>
